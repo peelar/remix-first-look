@@ -64,7 +64,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
     <div className="layout">
       <header>
         <nav aria-label="Main navigation">
-          {location.pathname !== "/songs" && <Link to="/songs">🏠</Link>}
+          {location.pathname !== "/" && <Link to="/">🏠</Link>}
         </nav>
       </header>
       <div>
