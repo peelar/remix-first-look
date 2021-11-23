@@ -9,11 +9,17 @@ export type Remix = {
 };
 
 export const getRemixes = async ({ songId }: { songId: string }) => {
-  return await supabase.from("remixes").select("*").eq('song', songId) as PostgrestResponse<Remix[]>;
+  return (await supabase
+    .from("remixes")
+    .select("*")
+    .eq("song", songId)) as PostgrestResponse<Remix[]>;
 };
 
 export const getRemix = async ({ id }: { id: string }) => {
-  return await supabase.from("remixes").select("*").eq('id', id) as PostgrestResponse<Remix>;
+  return (await supabase
+    .from("remixes")
+    .select("*")
+    .eq("id", id)) as PostgrestResponse<Remix>;
 };
 
 export type Song = {
@@ -23,5 +29,15 @@ export type Song = {
 };
 
 export const getSongs = async () => {
-  return await supabase.from("songs").select("*") as PostgrestResponse<Song[]>;
+  return (await supabase.from("songs").select("*")) as PostgrestResponse<
+    Song[]
+  >;
+};
+
+export const addRemix = async (remix: Omit<Remix, "id" | "created_at">) => {
+  return await supabase.from("remixes").insert([
+    {
+      ...remix,
+    },
+  ]);
 };

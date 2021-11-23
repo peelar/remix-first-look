@@ -25,7 +25,6 @@ nav {
   padding: 0 1rem;
   display: flex;
   align-items: center;
-  width: 100%;
   height: 100%;
 }
 
@@ -37,4 +36,54 @@ main {
   display: grid;
   grid-template-rows: min-content auto;
   height: 100vh;
+}
+
+dialog {
+  height: 40vh;
+  min-width: 320px;
+}
+
+dialog::backdrop {
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+dialog form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+dialog fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: none;
+}
+
+input, select {
+  height: 35px;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: .5rem 1rem;
+  background-color: purple;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
 }

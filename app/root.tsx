@@ -13,8 +13,9 @@ import {
 import type { LinksFunction } from "remix";
 
 import globalStylesUrl from "~/styles/global.css";
+import { Nav } from "./src/Nav";
 
-export let links: LinksFunction = () => {
+export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: globalStylesUrl },
   ];
@@ -58,15 +59,9 @@ function Document({
 }
 
 function Layout({ children }: React.PropsWithChildren<{}>) {
-  const location = useLocation();
-
   return (
     <div className="layout">
-      <header>
-        <nav aria-label="Main navigation">
-          {location.pathname !== "/" && <Link to="/">🏠</Link>}
-        </nav>
-      </header>
+      <Nav />
       <div>
         <main>{children}</main>
       </div>
@@ -75,7 +70,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
 }
 
 export function CatchBoundary() {
-  let caught = useCatch();
+  const caught = useCatch();
 
   let message;
   switch (caught.status) {

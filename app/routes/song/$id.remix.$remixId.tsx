@@ -14,12 +14,12 @@ export const loader: LoaderFunction = async ({ params: { remixId } }) => {
 
 export const meta: MetaFunction = () => {
     return {
-        title: "🎧 Song page 🎧",
-        description: "Song page"
+        title: "🎹 Remix 🎹",
+        description: "Remix page"
     };
 };
 
-export default function SongPage() {
+export default function RemixPage() {
     const remix = useLoaderData<Remix>();
 
     return (

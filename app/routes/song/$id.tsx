@@ -14,7 +14,7 @@ export const loader: LoaderFunction = async ({ params: { id } }) => {
 
 export const meta: MetaFunction = () => {
     return {
-        title: "🎧 Song page 🎧",
+        title: "🎧 Song 🎧",
         description: "Song page"
     };
 };
