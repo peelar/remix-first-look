@@ -59,7 +59,7 @@ export default function Index() {
   let data = useLoaderData<IndexData>();
 
   return (
-    <div className="remix__page">
+    <div>
       <main>
         <h2>Welcome to Remix!</h2>
         <p>We're stoked that you're here. 🥳</p>
@@ -79,7 +79,7 @@ export default function Index() {
         <h2>Demos In This App</h2>
         <ul>
           {data.demos.map(demo => (
-            <li key={demo.to} className="remix__page__resource">
+            <li key={demo.to}>
               <Link to={demo.to} prefetch="intent">
                 {demo.name}
               </Link>
@@ -89,7 +89,7 @@ export default function Index() {
         <h2>Resources</h2>
         <ul>
           {data.resources.map(resource => (
-            <li key={resource.url} className="remix__page__resource">
+            <li key={resource.url}>
               <a href={resource.url}>{resource.name}</a>
             </li>
           ))}
